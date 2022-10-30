@@ -14,13 +14,11 @@ window.onload = () => {
 
     var pintarActivado = false;
 
-    console.log(doc.getElementById(`tableroDiv`));
 
-
-
+    //Creamos la tabla.
     cosas.crearTabla(50, 70, `huecos`, `tableroDiv`);
 
-
+    //Hacemos que por cada apartado para seleccionar color cambie la variable color y añada un texto indicando el color seleccionado.
     doc.getElementsByClassName(`rojo`)[0].addEventListener(`click`, () => {
 
 
@@ -72,7 +70,7 @@ window.onload = () => {
 
     });
     
-
+    //Añadimos un addEventListener para saber si has hecho click y saber si está activado el pintar o no.
     doc.getElementById(`tableroDiv`).addEventListener(`click`, () => {
 
 
@@ -86,7 +84,7 @@ window.onload = () => {
     });
 
 
-
+    //Si está activo el pintar que se cambie el class del elemento que se le pasa por encima, siempre que sea un td.
     doc.getElementById(`tableroDiv`).addEventListener(`mouseover`, 
     
     function (evento) {

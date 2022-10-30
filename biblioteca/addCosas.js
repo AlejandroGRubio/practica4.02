@@ -2,6 +2,9 @@
 
 var doc = window.document;
 
+
+
+//Crea la tabla, segun su ancho y largo, añade un id a la tabla y a los td.
 export function crearTabla(ancho, largo, id = ``, idAnyadir = ``){
 
     var tabla = doc.createElement('table');
@@ -39,7 +42,7 @@ export function crearTabla(ancho, largo, id = ``, idAnyadir = ``){
 }
 
 
-
+//Muestra el color seleccionado donde le indiques.
 export function colorSeleccionado(nomColor, idUbi) {
     
 
