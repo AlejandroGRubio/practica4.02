@@ -1,0 +1,36 @@
+#selec{
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+    
+}
+
+.rojo{
+    background-color: red;
+    border: 1px solid black;
+}
+.amarillo{
+    background-color: yellow;
+    border: 1px solid black;
+}
+.azul{
+    background-color: blue;
+    border: 1px solid black;
+}
+.verde{
+    background-color: green;
+    border: 1px solid black;
+}
+.blanco{
+    background-color: white;
+    border: 1px solid black;
+}
+
+#tablas{
+    width: 80%;
+    margin: auto;
+}
+
+td {
+	border: 1px solid black;
+}
