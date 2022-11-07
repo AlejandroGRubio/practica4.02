@@ -1,0 +1,33 @@
+variables:
+  TEST_NAME: registry.gitlab.com/alejandrogarciarubio.alu/ejercicio4.02
+
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  script: 
+    - echo "compiling the code..."
+    - docker login -u $GITLABUSER -p $GITLABPASS registry.gitlab.com
+    - docker build -t $REP_NAME .
+    - docker push $REP_NAME
+    - sleep 10
+    - echo "Compile complete."
+  tags:
+    - ci_runner
+
+
+deply-job:
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+    - docker login -u $GITLABUSER -p $GITLABPASS registry.gitlab.com
+    - docker pull $REP_NAME
+    - docker kill gitlabCV || docker ps
+    - docker rm gitlabCV || docker ps
+    - docker run -dt -p 81:80 --name gitlabCV $REP_NAME
+    - echo "Aplication successfully deployed."
+
+  tags:
+    - ci-runner
